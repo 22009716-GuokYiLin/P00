@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overseas Banking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .form-section {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .payment-option {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #1e90ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Overseas Banking</h1>
+        <div class="form-section">
+            <form>
+                <label for="recipient">Recipient's Name:</label>
+                <input type="text" id="recipient" required>
+
+                <label for="amount">Amount:</label>
+                <input type="text" id="amount" required>
+
+                <label for="account">Recipient's Account Number (9 digits):</label>
+                <input type="text" id="account" pattern="\d{9}" title="Please enter a 9-digit numeric account number" required>
+
+                <div class="payment-option">
+                    <input type="radio" id="paypal" name="payment_method" value="paypal" required>
+                    <label for="paypal">PayPal</label>
+                </div>
+
+                <div class="payment-option">
+                    <input type="radio" id="alipay" name="payment_method" value="alipay" required>
+                    <label for="alipay">Alipay</label>
+                </div>
+
+                <button id="initiate-button" type="button">Initiate Transfer</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        //This part of code is to have a pop up notification message
+        document.addEventListener("DOMContentLoaded", function () {
+            const initiateButton = document.getElementById("initiate-button");
+
+            initiateButton.addEventListener("click", function () {
+                const recipientValue = document.getElementById("recipient").value.trim();
+                const amountValue = document.getElementById("amount").value.trim();
+                const accountValue = document.getElementById("account").value.trim();
+
+                if (!recipientValue || !amountValue || !accountValue) {
+                    alert("Please fill in all required fields.");
+                } else {
+                    const transferSuccessful = confirm("Transfer of amount successful! Click OK to go to another page.");
+                    if (transferSuccessful) {
+                        window.location.href = "Loginpage-4.html"; // Only allow OK in transaction successful to redirect
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

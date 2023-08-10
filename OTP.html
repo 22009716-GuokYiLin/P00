@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter OTP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .otp-container {
+            max-width: 500px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #c0c7f2;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .otp-form {
+            text-align: center;
+        }
+
+        .otp-input {
+            padding: 6px;
+            font-size: 20px;
+            text-align: center;
+            width: 40px;
+            height: 50px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 0 5px;
+            ime-mode: disabled;
+        }
+
+        .submit-btn {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="otp-container">
+        <h2>Enter OTP</h2>
+        <form class="otp-form" action="Loginpage-4.html" onsubmit="return validateForm()">
+            <input class="otp-input" type="text" pattern="[0-9]" inputmode="numeric" maxlength="1" required>
+            <input class="otp-input" type="text" pattern="[0-9]" inputmode="numeric" maxlength="1" required>
+            <input class="otp-input" type="text" pattern="[0-9]" inputmode="numeric" maxlength="1" required>
+            <input class="otp-input" type="text" pattern="[0-9]" inputmode="numeric" maxlength="1" required>
+            <input class="otp-input" type="text" pattern="[0-9]" inputmode="numeric" maxlength="1" required>
+            <input class="otp-input" type="text" pattern="[0-9]" inputmode="numeric" maxlength="1" required>
+            
+            <button class="submit-btn" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var inputs = document.getElementsByClassName('otp-input');
+            for (var i = 0; i < inputs.length; i++) {
+                if (!/^[0-9]+$/.test(inputs[i].value)) {
+                    alert('Please enter only numeric values in all fields.');
+                    inputs[i].focus();
+                    return false;
+                }
+            }
+            return true;
+        }
+        
+        // Redirect after successful submission
+        var form = document.querySelector('.otp-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            if (validateForm()) {
+                window.location.href = 'Loginpage-4.html'; // Replace 'other_page.html' with the actual URL
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elaine GA</title>
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color:black;
+            color: #fff;
+            text-align: center;
+            padding: 0.3rem;
+            position: relative;
+        }
+         /* Style for the logo image */
+         .logo {
+            position: absolute;
+            top: 20px; /* Adjust the top position as needed */
+            left: 20px; /* Adjust the left position as needed */
+            width: 60px; /* Adjust the width of the logo as needed */
+        }
+        .login-btn,
+        .signup-btn  {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 8px 16px;
+            background-color:rgb(218, 183, 251); /* Blue color for the button */
+            color: #0b0a0a;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            float: right; /* Align buttons to the right */
+        }
+        .signup-btn {
+            background-color: #d42f0e; /* Custom color for Sign Up button */
+            margin-right: 80px; /* Add some spacing between the buttons */
+        }
+      
+        .login-btn:hover,
+        .signup-btn:hover {
+            opacity: 1;  /* Reduce opacity on hover for both buttons */
+            background-color: #0056b3; /* Darker blue color on hover */
+        }
+        nav {
+            background-color: pink;
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem;
+        }
+      
+        /* Custom style for navigation links */
+        nav a {
+            color:rgb(215, 132, 160);
+            text-decoration: none;
+            padding: 1rem 0.6rem;
+            font-size: 22px; /* Adjust the text size here */
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        main {
+            padding: 3rem;
+        }
+        main h3 {
+            font-size: 24px;
+
+        }
+        main h2 {
+            font-size: 24px;
+        }
+         /* Custom style for paragraph text within main section */
+
+         main p {
+            color:rgb(223, 155, 66); /*  color */
+            font-size: 16px;
+        }
+        .image-gallery {   /*Container of the photo */
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .image-gallery img {
+            width: 150px;
+            height: 200;    /*Adjust the height as needed*/
+            border-radius: 40%;
+            margin-bottom: 25px;
+            object-fit: cover; /* To ensure the whole image fits within the circular shape */
+        }
+        .image-header {
+            text-align: center;
+            font-size: 24px;
+            color:rgb(245, 96, 146);
+            margin-bottom: 20px; /* Adjust the margin as needed */
+        }
+        .information-header {
+            text-align: center;
+            font-size: 24px;
+            color:rgb(245, 96, 146);
+            margin-bottom: 10px; /* Adjust the margin as needed */
+        }
+        .information {
+            text-align: left auto;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #ffffff;
+            text-align: center;
+            padding: 0.5rem;
+        }
+       
+    </style>
+</head>
+<body>
+    <header>
+          <!-- Logo image -->
+          <img src="BJYX Turtule.jpg"
+          alt="Your Logo" class="logo">
+        <h1>Pay Me X You </h1>
+        <a href="Login-2.html" class="login-btn">Login</a>
+        <a href="#" class="signup-btn"onclick="window.location.href='Signup.html';">Sign Up</a>
+    </header>
+    <nav>
+        <a href="GradeAssessment-1.html">Home</a>
+        <a href="AboutInfo.html">About</a>
+        <a href="Contact.html">Contact</a>
+    </nav>
+    <main>
+        <h2>Welcome to Pay Me X You Website!</h2>
+        <section>
+            <h3>Mission</h3>
+            <p>Our Mission is to have a save and smooth transaction for our customer that uses our app.
+                 It will have save login and less waiting time when login to do a payment</p>
+        </section>
+        <section>
+            <h3>Vision</h3>
+            <p>We will achieve to be Singapore Faster and Smoother transaction online banking
+                 Application that allow our user to transfer their money in a save and short period of time.</p>
+        </section>
+        <section>
+            <h3>Benefits</h3>
+            <p>We will provide a smooth payment and service when you create an account with us. 
+                We provide high interest rate and exchange rate compare toother bank.</p>
+        </section>
+
+        <div class="image-header">Check out our Founders</div>
+        <div class="image-gallery">
+            <img src="WangYiBo.jpg" alt="Image 1">
+            <img src="WangYiBo2.jpg" alt="Image 2">
+            <img src="Zhao-Xian.jpeg" alt="Image 3">
+            
+            <!-- Can add more images here if needed -->
+        </div>
+
+        <div class="information-header">Location and Contact number of our company</div>
+        <div class="information">
+            <p>648 Orchard Road, 480023,Singapore (Main)</p>
+            <p>Phone: +65 9999 8888</p>
+
+             <!-- Address and handphone number of the company -->
+        </div>
+    </main>
+    <footer>
+
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

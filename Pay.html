@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Method</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .payment-container {
+            max-width: 500px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .submit-btn {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function updateValidationCriteria() {
+            var paymentType = document.getElementById("paymentType").value;
+            var identifierInput = document.getElementById("identifier");
+            
+            if (paymentType === "contactNumber") {
+                identifierInput.pattern = "[0-9]{8}";
+                identifierInput.title = "Mobile Number should contain exactly 8 numeric digits";
+            } else if (paymentType === "icNumber") {
+                identifierInput.pattern = "[A-Za-z][0-9]{7}[A-Za-z]";
+                identifierInput.title = "IC Number should start with one alphabet character, followed by 7 numeric digits, and end with one alphabet character";
+            }
+        }
+
+        function validateAndSubmit() {
+            var successMessage = "Money transfer successful!";
+            var paymentType = document.getElementById("paymentType").value;
+            var identifier = document.getElementById("identifier").value;
+            var amount = document.getElementById("amount").value;
+
+            // Validation checks here based on paymentType and identifier
+            if (paymentType === "contactNumber") {
+                if (!/^[0-9]{8}$/.test(identifier)) {
+                    alert("Invalid mobile number.");
+                    return;
+                }
+            } else if (paymentType === "icNumber") {
+                if (!/^[A-Za-z][0-9]{7}[A-Za-z]$/.test(identifier)) {
+                    alert("Invalid IC number.");
+                    return;
+                }
+            }
+
+            // Additional validation checks for amount
+            if (!/^[0-9]+$/.test(amount)) {
+                alert("Invalid amount.");
+                return;
+            }
+
+            // Display success message and reset form
+            alert(successMessage);
+            document.getElementById("paymentForm").reset();
+
+             // Redirect to another page
+             window.location.href = "Loginpage-4.html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="payment-container">
+        <h2>Select Payment Method</h2>
+        <form id="paymentForm" action="process_payment.php" method="post">
+            <div class="form-group">
+                <label for="paymentType">Payment Type:</label>
+                <select id="paymentType" name="paymentType" onchange="updateValidationCriteria()" required>
+                    <option value="" disabled selected>Select Payment Type</option>
+                    <option value="contactNumber">By Contact Number</option>
+                    <option value="icNumber">By IC Number</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="identifier">Enter receiver IC/ No.:</label>
+                <input type="text" id="identifier" name="identifier" pattern="" title="" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount to Transfer:</label>
+                <input type="text" id="amount" name="amount" pattern="[0-9]+" title="Please enter a valid numeric amount" required>
+            </div>
+            <button class="submit-btn" type="button" onclick="validateAndSubmit()">Submit Payment</button>
+        </form>
+    </div>
+</body>
+
+</html>

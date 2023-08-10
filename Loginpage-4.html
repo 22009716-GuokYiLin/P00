@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            background-color: #a3e4f5;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        /* Header Section */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px; /* Size of the white background */
+            background-color: #fff;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 60px; /* Adjust the width of the logo as needed */
+        }
+
+        .logo-left {
+            width: 60px; /* Adjust the width of the left logo as needed */
+        }
+
+        .middle-section {
+            margin-top: 100px; /* gap between account balance and the middle section */
+        }
+
+        .middle-section p {
+            font-size: 30px;
+        }
+
+        /* Centering Pay Check Balance and Overseas Banking */
+        .middle-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto; /* Center the middle section */
+        }
+
+        /* Remove underline from links */
+        .middle-container a {
+            text-decoration: none;
+        }
+
+        /* Bottom Section - Transaction history */
+        .bottom-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .transaction-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .transaction-item p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div class="header-container">
+        <!-- Left Logo -->
+        <div class="header-content">
+            <img src="BJYX Turtule.jpg" alt="Left Logo" class="logo-left">
+        </div>
+
+        <!-- Right Logo -->
+        <div class="header-content">
+            <a href="Profile-5.html">
+                <img src="BJYX Logo.jpg" alt="Right Logo" class="logo">
+            </a>
+        </div>
+    </div>
+
+    <!-- Middle Section - Pay Check Balance and Overseas Banking -->
+    <div class="middle-section">
+        <div class="middle-container">
+            <a href="Pay.html"><p>Pay</p></a>
+            <a href="CheckBalance.html"><p>Check Balance</p></a>
+            <a href="overseas_banking.html"><p>Overseas Banking</p></a>
+        </div>
+    </div>
+
+    <!-- Bottom Section - Transaction History -->
+    <div class="bottom-section">
+        <p>Transaction History</p>
+        <div class="transaction-item">
+            <p><strong>Payment to Supplier</strong></p>
+            <p>$500.00</p>
+        </div>
+        <div class="transaction-item">
+            <p><strong>Withdrawal</strong></p>
+            <p>$100.00</p>
+        </div>
+        <!-- Add more transaction items as needed -->
+    </div>
+</body>
+
+</html>
+

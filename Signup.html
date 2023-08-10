@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .signup-container {
+            max-width: 500px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .submit-btn {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            var name = document.getElementById("name").value;
+            var phone = document.getElementById("phone").value;
+            var password = document.getElementById("pwd").value;
+
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var phonePattern = /^[0-9]{8}$/;
+            var passwordPattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+            if (name.trim() === "") {
+                alert("Please enter your name.");
+                return false;
+            }
+
+            if (!phonePattern.test(phone)) {
+                alert("Please enter 8 numeric digits for the phone number.");
+                return false;
+            }
+
+            if (!passwordPattern.test(password)) {
+                alert("Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.");
+                return false;
+            }
+
+            var confirmSignup = confirm("Signup successful! Click OK to be redirected to the login page.");
+            if (confirmSignup) {
+                window.location.href = "Login-2.html";
+            }
+            
+            return confirmSignup;
+        }
+    </script>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Signup</h2>
+        <form action="Login-2.html" method="post">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Handphone Number (8 numeric digits):</label>
+                <input type="text" id="phone" name="phone" pattern="[0-9]{8}" title="Please enter 8 numeric digits" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+            </div>
+            <button class="submit-btn" type="submit" onclick="return validateForm();">Signup</button>
+        </form>
+    </div>
+</body>
+</html>
+
